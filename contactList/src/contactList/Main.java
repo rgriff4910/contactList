@@ -18,8 +18,6 @@ public class Main {
 		
 		if(contactFile.exists()) {
 			System.out.print("yes");
-		} else {
-			System.out.print("no");
 		}
 	}
 	
