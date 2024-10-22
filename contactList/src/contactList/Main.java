@@ -1,3 +1,11 @@
+/** Main - class to interact with contact list
+ * 
+ * 
+ * Copyright Howard Community College 2024
+ * 
+ * @author Ronald Griffin
+ * 
+ */
 package contactList;
 
 import java.util.Scanner;
@@ -39,9 +47,6 @@ public class Main {
 						// add contact to list
 					}
 					
-					for (Contact contact: contactList) {
-						System.out.println(contact);
-					}
 					
 					reader.close();
 					// close reader
@@ -68,16 +73,33 @@ public class Main {
 			System.out.print(contactList.get(i));
 		}
 	}
+	
+	public static void reverseAlphabeticalOrder(List contactList) {
+		int n = contactList.size();
+		Collections.sort(contactList);
+		
+		for (int i = contactList.size(); i == 0; i--) {
+			System.out.print(contactList.get(i));
+		}
+	}
+	
+	public static void search(List contactList) {
+		
+	}
+	
 	public static void main(String[] args) {
+		System.out.print("Copyright Howard Community College 2024\n\n");
+		// copyright statement
+		
 		List <Contact> contactList = read();
 		
 		Scanner input = new Scanner(System.in);
 		
 		int whileloop = 0;
 		while (whileloop == 0) {
-			System.out.print("Contact List/n");
-			System.out.print("------------/n");
-			System.out.print("Select One of the Following Operations/n");
+			System.out.print("Contact List\n");
+			System.out.print("------------\n");
+			System.out.print("Select One of the Following Operations\n");
 			System.out.print("1. Display contents in alphabetical order\n");
 			System.out.print("2. Display contents in reverse alphabetical order\n");
 			System.out.print("3. Search contacts\n");

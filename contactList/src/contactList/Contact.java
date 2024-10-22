@@ -1,3 +1,11 @@
+/** Contact - contact class
+ * 
+ * 
+ * Copyright Howard Community College 2024
+ * 
+ * @author Ronald Griffin
+ * 
+ */
 package contactList;
 
 public class Contact {
