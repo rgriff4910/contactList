@@ -1,6 +1,6 @@
 package contactList;
 
-public class Class {
+public class Contact {
 	int number;
 	String name;
 	
