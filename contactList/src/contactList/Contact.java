@@ -1,11 +1,11 @@
 package contactList;
 
 public class Contact {
-	int number;
+	String number;
 	String name;
 	// data fields
 	
-	public Contact(String name, int number) {
+	public Contact(String name, String number) {
 		this.name = name;
 		this.number = number;
 	}
@@ -21,12 +21,12 @@ public class Contact {
 	}
 	// name setter
 	
-	public int getNumber() {
+	public String getNumber() {
 		return number;
 	}
 	// number getter
 	
-	public void setNumber(int number) {
+	public void setNumber(String number) {
 		this.number = number;
 	}
 	// number setter
