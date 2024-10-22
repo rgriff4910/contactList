@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author rgrif
+ *
+ */
+module contactList {
+}
