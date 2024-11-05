@@ -7,8 +7,9 @@
  * 
  */
 package contactList;
+import java.lang.Comparable;
 
-public class Contact {
+public class Contact implements Comparable<Contact>{
 	String number;
 	String name;
 	// data fields
@@ -38,6 +39,10 @@ public class Contact {
 		this.number = number;
 	}
 	// number setter
+	
+	public int compareTo(Contact c) {
+			return this.getName().compareTo(c.getName());
+	}
 	
 	@Override
 	public String toString() {

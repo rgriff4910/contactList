@@ -62,28 +62,29 @@ public class Main {
 				System.out.print("File not found. Please try again.\n\n");
 			}
 		}
+		
 		return contactList;
 	}
 	
-	public static void alphabeticalOrder(List contactList) {
-		int n = contactList.size();
+	public static void alphabeticalOrder(List<Contact> contactList) {
+		System.out.print("\n");
 		Collections.sort(contactList);
 		
 		for (int i = 0; i < contactList.size(); i++) {
-			System.out.print(contactList.get(i));
+			System.out.printf("%s \n",contactList.get(i));
 		}
 	}
 	
-	public static void reverseAlphabeticalOrder(List contactList) {
-		int n = contactList.size();
+	public static void reverseAlphabeticalOrder(List<Contact> contactList) {
+		System.out.print("\n");
 		Collections.sort(contactList);
 		
-		for (int i = contactList.size(); i == 0; i--) {
-			System.out.print(contactList.get(i));
+		for (int i = contactList.size() - 1; i >= 0; i--) {
+			System.out.printf("%s \n",contactList.get(i));
 		}
 	}
 	
-	public static void search(List contactList) {
+	public static void search(List<Contact> contactList) {
 		
 	}
 	
@@ -97,6 +98,7 @@ public class Main {
 		
 		int whileloop = 0;
 		while (whileloop == 0) {
+			System.out.print("\n");
 			System.out.print("Contact List\n");
 			System.out.print("------------\n");
 			System.out.print("Select One of the Following Operations\n");
@@ -113,17 +115,19 @@ public class Main {
 			if (selection == 1) {
 				alphabeticalOrder(contactList);
 			}
-			if (selection == 2) {
+			else if (selection == 2) {
 				reverseAlphabeticalOrder(contactList);
 			}
-			if (selection == 3) {
+			else if (selection == 3) {
 				search(contactList);
 			}
-			if (selection == 4) {
+			else if (selection == 4) {
 				System.out.print("Goodbye!");
 				whileloop = 1;
+				
+				input.close();
 			} else {
-				System.out.print("Invalid selection");
+				System.out.print("Invalid selection\n\n");
 			}
 		}
 	}
