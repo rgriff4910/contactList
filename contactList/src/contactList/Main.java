@@ -157,23 +157,24 @@ public class Main {
 		int low = 0; // low end of search area
 		int high = contactList.size() - 1; // high end of search area
 		int middle = (low + high + 1) / 2; // middle element
-		int location = -1; // return value
+		int location = -1; // location of name in list; stays -1 if not found
 		
 		do {
-			if (searchName.equals((contactList).get(middle).getName())) {
-				location = middle;
-			} else if (searchName.compareTo(contactList.get(middle).getName()) < 0) {
-				high = middle - 1;
-			} else {
-				low = middle + 1;
+			if (searchName.equals((contactList).get(middle).getName())) { // if name is found at middle element
+				location = middle; // make location the middle element and end loop
+			} else if (searchName.compareTo(contactList.get(middle).getName()) < 0) { // if middle element too high
+				high = middle - 1; // eliminate upper half
+			} else { // if middle element too low
+				low = middle + 1; // eliminate lower half
 			}
-			middle = (low + high + 1) / 2;
+			middle = (low + high + 1) / 2; // recalculate middle
 		} while ((low <= high) && (location == -1));
 		
-		if (location == -1) {
+		if (location == -1) { // if name not found
 			System.out.print("Contact not found.");
 		} else {
 			System.out.print(contactList.get(location));
+			// print contact of found name using location
 		}
 		System.out.print("\n");
 	}
@@ -235,10 +236,11 @@ public class Main {
 			else if (selection == 3) {
 				if (sorted == 0) {
 					sequentialSearch(contactList, input);
-				// use sequential search if list not sorted
-				} else if (sorted == 1) {
+				// use sequential search if list is not sorted
+				} 
+				else if (sorted == 1) {
 					binarySearch(contactList, input);
-				} // use binary search if list sorted
+				} // use binary search if list is sorted
 			}
 			else if (selection == 4) {
 				System.out.print("\nGoodbye!");
@@ -251,6 +253,7 @@ public class Main {
 				// close scanner
 			} else {
 				System.out.print("Invalid selection\n\n");
+				// error message if invalid selection made
 			}
 		}
 	}
